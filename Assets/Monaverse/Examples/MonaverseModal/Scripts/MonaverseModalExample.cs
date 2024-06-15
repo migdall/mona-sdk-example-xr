@@ -9,6 +9,7 @@ namespace Monaverse.Examples
     {
         [SerializeField] private MonaCollectibleListExample _compatibleItems;
         [SerializeField] private MonaCollectibleItemExample _importedItem;
+
         private void Start()
         {
             MonaverseModal.ImportCollectibleClicked += OnImportCollectibleClicked;
@@ -35,6 +36,7 @@ namespace Monaverse.Examples
         {
             Debug.Log("[MonaverseModalExample.OnImportCollectibleClicked] " + collectible.Title);
             _importedItem.SetCollectible(collectible);
+            Debug.Log("Getting gltf model from url: " + "blank");
         }
         
         /// <summary>

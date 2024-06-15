@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Space
+  - Coin
+  - SpawnPoint
+  - Cannon
+  - Cannonball
   layers:
   - Default
   - TransparentFX
