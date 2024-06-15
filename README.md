@@ -3,7 +3,7 @@
 This is a WIP game where you use an avatar and an artifact from your Mona wallet to race towards the finish line while avoiding cannon fire. You can also repeatedly drop your artifact onto the field if you have a gamepad.  
 
 ## Steps to play  
-1. Download the zip
+1. Download the SpeedLink zip from [here](https://github.com/migdall/mona-sdk-example-xr/releases/tag/v0.1)  
 2. Unzip
 3. Double click the TestMagicLink.exe file
 4. Click the Mona button in the top right corner of the screen
