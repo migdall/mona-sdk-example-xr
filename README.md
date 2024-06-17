@@ -1,5 +1,8 @@
 # [Submission] Edge Esmeralda x Hackathon  
 
+Game Title: "Speed Link"  
+Game Description: A casual multiplayer survival racer where you try to get to the finish line with as many points as possible.  
+
 This is a WIP game where you use an avatar and an artifact from your Mona wallet to race towards the finish line while avoiding cannon fire. You can also repeatedly drop your artifact onto the field if you have a gamepad.  
 
 ## Steps to play  
