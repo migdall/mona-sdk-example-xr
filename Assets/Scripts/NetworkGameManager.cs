@@ -139,11 +139,26 @@ public class NetworkGameManager : NetworkBehaviour
         Debug.Log("ChangeUrlServerRpc: " + newUrl + " from " + id);
     }
 
-    public void UpdatePlayerScore(ulong playerId)
+    public void UpdatePlayerScore(ulong playerId, bool down = false)
     {
         if (IsOwner && IsClient)
         {
-            IncrementPlayerScoreServerRPC(playerId);
+            if (!down)
+            {
+                IncrementPlayerScoreServerRPC(playerId);
+            }
+            else
+            {
+                DecrementPlayerScoreServerRPC(playerId);
+            }
+        }
+    }
+
+    public void UpdatePlayerGameState(ulong playerId)
+    {
+        if (IsOwner && IsClient)
+        {
+           Debug.Log($"Player {playerId} has finished.");
         }
     }
 
@@ -323,6 +338,18 @@ public class NetworkGameManager : NetworkBehaviour
         {
             PlayerGameData gameData = playerScores[playerId];
             gameData.playerScore += 1;
+            playerScores[playerId] = gameData;
+            DistributeNewPlayerScoreClientRPC(playerId, playerScores[playerId].playerScore);
+        }
+    }
+
+    [ServerRpc]
+    private void DecrementPlayerScoreServerRPC(ulong playerId)
+    {
+        if (playerScores.ContainsKey(playerId))
+        {
+            PlayerGameData gameData = playerScores[playerId];
+            gameData.playerScore -= 1;
             playerScores[playerId] = gameData;
             DistributeNewPlayerScoreClientRPC(playerId, playerScores[playerId].playerScore);
         }
